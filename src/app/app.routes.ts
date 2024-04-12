@@ -8,5 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '**', redirectTo: '/inicio', pathMatch: 'full' },
 
 ];
