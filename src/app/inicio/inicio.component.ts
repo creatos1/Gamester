@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../app/services/languageservice'; // Ajusta la ruta al servicio
 import { Router } from '@angular/router';
+
+declare const particlesJS: any; 
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
   constructor(private languageService: LanguageService, private router: Router) {}
+
+  ngOnInit() {
+    // Llamar a la función initParticles después de que el documento esté completamente cargado
+    document.addEventListener('DOMContentLoaded', () => {
+      this.initParticles();
+    });
+  }
 
   saveLanguage(event: Event) {
     const selectedLanguage = (event.target as HTMLSelectElement)?.value;
@@ -20,11 +29,124 @@ export class InicioComponent {
   checkLanguage() {
     const selectedLanguage = this.languageService.getSelectedLanguage();
     if (selectedLanguage === 'es') {
-      window.location.href = '/uploadform';
+      window.location.href = '/homees';
     } else if (selectedLanguage === 'en') {
-      window.location.href = 'https://www.google.com';
+      alert('Coming soon!');
     } else {
       alert('Select a language first!');
     }
+  }
+
+  initParticles(): void {
+    particlesJS('fire-particles', {
+      particles: {
+        number: {
+          value: 80, // Número de partículas
+          density: {
+            enable: true,
+            value_area: 800 // Densidad de las partículas
+          }
+        },
+        color: {
+          value: '#ff8000 ' // Color de las partículas
+        },
+        shape: {
+          type: 'circle', // Forma de las partículas
+          stroke: {
+            width: 0,
+            color: '#ff8000 '
+          },
+          polygon: {
+            nb_sides: 5
+          },
+          image: {
+            src: 'img/github.svg',
+            width: 100,
+            height: 100
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: false,
+          distance: 150,
+          color: '#ff8000 ',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'repulse'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    });
   }
 }
