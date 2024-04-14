@@ -1,4 +1,3 @@
-// app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,9 +7,9 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner'; // Importa NgxSpinnerModule
 import { EsComponent } from '../app/es/es.component';
+
 @NgModule({
   declarations: [
-
   ],
   imports: [
     BrowserModule,
@@ -18,9 +17,10 @@ import { EsComponent } from '../app/es/es.component';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    RouterModule.forRoot([]) // Agrega el módulo de enrutamiento con rutas vacías
   ],
   providers: [],
-  bootstrap: [] // Utiliza AppComponent para arrancar la aplicación
+  bootstrap: [] // No se especifica ningún componente para arrancar la aplicación aquí
 })
 export class AppModule { }

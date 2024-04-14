@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -89,14 +90,14 @@
     particlesJS('particles-js', {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 80, // Aumenta el número de partículas
           "density": {
             "enable": true,
-            "value_area": 800
+            "value_area": 900// Ajusta el área donde se distribuyen las partículas
           }
         },
         "color": {
-          "value": "#ff0000"
+          "value": "#ff8000" // Color rojo para simular el fuego
         },
         "shape": {
           "type": "circle",
@@ -109,8 +110,8 @@
           }
         },
         "opacity": {
-          "value": 0.5,
-          "random": false,
+          "value": 0.8,
+          "random": true,
           "anim": {
             "enable": false,
             "speed": 1,
@@ -119,27 +120,23 @@
           }
         },
         "size": {
-          "value": 5,
+          "value": 2,
           "random": true,
           "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
+            "enable": true,
+            "speed": 10,
+            "size_min": 1,
             "sync": false
           }
         },
         "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ff0000",
-          "opacity": 0.4,
-          "width": 1
+          "enable": false
         },
         "move": {
           "enable": true,
-          "speed": 6,
-          "direction": "none",
-          "random": false,
+          "speed": 10, // Aumenta la velocidad de movimiento
+          "direction": "top-right", // Dirección de movimiento
+          "random": true, // Movimiento aleatorio
           "straight": false,
           "out_mode": "out",
           "bounce": false,
@@ -154,11 +151,11 @@
         "detect_on": "canvas",
         "events": {
           "onhover": {
-            "enable": true,
+            "enable": false,
             "mode": "grab"
           },
           "onclick": {
-            "enable": true,
+            "enable": false,
             "mode": "push"
           },
           "resize": true
