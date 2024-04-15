@@ -9,6 +9,8 @@ declare var particlesJS: any; // Declaración de la función particlesJS
 })
 export class EsComponent implements OnInit {
   isVertical: boolean = false;
+  audio = new Audio();
+  audioIconSrc = '../../assets/img/sound.png'; // Cambia la ruta al icono de audio activado
 
   toggleVertical() {
     this.isVertical = !this.isVertical;
@@ -119,5 +121,18 @@ export class EsComponent implements OnInit {
       },
       "retina_detect": true
     });
+    this.audio.src = '../../assets/sound/sound.mp3'; // Cambia la ruta al archivo de audio
+    this.audio.load();
+    this.audio.loop = true; // Establece el audio en bucle
+    this.audio.play(); // Reproduce automáticamente el audio al cargar la página
+  }
+  toggleAudio() {
+    if (this.audio.paused) {
+      this.audio.play();
+      this.audioIconSrc = '../../assets/img/sound.png'; // Cambia la ruta al icono de audio activado
+    } else {
+      this.audio.pause();
+      this.audioIconSrc = '../../assets/img/nosound.png'; // Cambia la ruta al icono de audio desactivado
+    }
   }
 }

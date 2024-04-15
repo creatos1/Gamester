@@ -8,40 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    /* Estilos CSS */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    .navbar {
-      width: 100%;
-      z-index: 1;
-    }
-
-    /* Agrega estilos para que el contenedor de partículas se superponga al video */
-    #particles-js {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background-color: transparent;
-    }
-
-    /* Agrega estilos para el contenedor principal */
-    #video-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-  </style>
 </head>
 <body>
+  <div id="particles-js"></div> <!-- Contenedor de partículas -->
+  <section>
+    
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container">
       <a class="navbar-brand" href="/home">
@@ -71,20 +42,29 @@
       </div>
     </div>
   </nav>
+  <audio id="myAudio" loop>
+    <source src="../../assets/sound/sound.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  <button class="audio-button" (click)="toggleAudio()">
+    <img [src]="audioIconSrc" alt="Audio">
+  </button>
+  
   <div id="video-container">
+    <video id="video" playsinline muted loop autoplay onclick="this.play();" poster="../../assets/img/lol.png">
+      <source src="../../assets/img/2.mp4" type="video/mp4">
+    </video>
     <section>
-      <div class="greeting">Bienvenido al lugar secreto de los mods de 
-        <br>GOD OF WAR
+      <div class="greeting">Bienvenido a la página web de 
+        <br>AXL GAMESTER
       </div>
     </section>
     
-    <video id="video" playsinline muted loop autoplay onclick="this.play();" poster="../../assets/img/w1.jpg">
-      <source src="../../assets/img/2.mp4" type="video/mp4">
-    </video>
-  
-    <div id="particles-js"></div> <!-- Contenedor de partículas -->
-  </div>
 
+  
+
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS('particles-js', {
@@ -189,5 +169,21 @@
       "retina_detect": true
     });
   </script>
+  </section>
+<!--  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="greeting">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="logo-container">
+            <img src="../../assets/img/menu.png" alt="Imagen personalizada" class="logo-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
 </body>
 </html>

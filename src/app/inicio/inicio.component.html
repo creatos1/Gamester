@@ -22,6 +22,14 @@
             align-items: center;
             flex-direction: column;
         }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+          }
 
         /* Estilos para el GIF de imagen */
         .background-gif {
@@ -104,7 +112,7 @@
 
         /* Estilos para el footer */
         footer {
-            position: fixed;
+            position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
@@ -117,13 +125,21 @@
 
         /* Estilos para la imagen en el footer */
         .footer-image {
-            position: absolute;
+            position: fixed;
             bottom: 2vw; /* Margen inferior en relación con el ancho de la pantalla */
             left: 2vw; /* Margen izquierdo en relación con el ancho de la pantalla */
             width: 100px; /* Ancho de la imagen en relación con el ancho de la pantalla */
             max-width: 50%; /* Ancho máximo del 30% del contenedor */
             height: auto; /* Altura automática */
             padding-right:5px ;
+        }
+        .centered-textt{
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif; /* Fuente Bebas Neue */
+            color: rgba(255, 0, 0, 0.9); /* Color blanco con opacidad */
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.548); /* Sombra */
+            font-size: 2vw; /* Tamaño de la fuente en relación con el ancho de la pantalla */
+
         }
 
         /* Estilos para el texto centrado responsivo */
@@ -152,22 +168,36 @@
             .copy {
                 font-size: 10px;
             }
+            .centered-textt{
+
+                text-align: center;
+                font-family: 'Bebas Neue', sans-serif; /* Fuente Bebas Neue */
+                color: rgba(255, 0, 0, 0.9); /* Color blanco con opacidad */
+                text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.548); /* Sombra */
+                font-size: 15px; /* Tamaño de la fuente en relación con el ancho de la pantalla */
+    
+            }
         }
+
     </style>
 </head>
 <body>
 
+
+
     <!-- Fondo de la página -->
     <div class="background">
-        <!-- GIF de imagen -->
+        
+
         <img src="assets/img/home.gif" alt="Background" class="background-gif">
         
-        <!-- Selector de idioma y botón de aceptar -->
+        <div id="particles-js"></div> <!-- Contenedor de partículas -->
         <div class="content">
             <div class="centered-text">
                 <a style="font-size: 6vw;">I'm the Fucking</a>
                 
             </div>
+            
             <img src="assets/img/GOW LOGO.png" alt="GOW Logo" class="logo-image">
             <!-- Imagen PNG por encima del GIF -->
     
@@ -181,17 +211,26 @@
             
             <!-- Botón de entrar -->
             <button id="enterButton" class="enter-button" (click)="checkLanguage()">Entrar</button>
+            <a href="https://www.youtube.com/channel/UCU6JmBJ7J8WeuwBOrJmeMKA">
+
+
+                <img src="assets/img/22222.png" alt="Image" class="footer-image">
+            </a>
         </div>
         
         <!-- Footer -->
         <footer>
-            <a href="https://www.youtube.com/channel/UCU6JmBJ7J8WeuwBOrJmeMKA">
-                <img src="assets/img/22222.png" alt="Image" class="footer-image">
-            </a>
-            <a class="copy"> 
-                <a style="color:azure;"> Axl Gamester</a>
-            </a>         
+
+
+            <div>
+                <p class="centered-textt">Axl Gamester</p>
+            </div>
+            
+
+
+                    
         </footer>
+        
     </div>
 
 </body>
