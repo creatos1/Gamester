@@ -5,12 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSpinnerModule } from 'ngx-spinner'; // Importa NgxSpinnerModule
-import { EsComponent } from '../app/es/es.component';
+import { NgxSpinnerModule } from 'ngx-spinner'; 
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -18,7 +16,8 @@ import { EsComponent } from '../app/es/es.component';
     CommonModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    RouterModule.forRoot([]) // Agrega el módulo de enrutamiento con rutas vacías
+    RouterModule.forRoot([]),
+
   ],
   providers: [],
   bootstrap: [] // No se especifica ningún componente para arrancar la aplicación aquí

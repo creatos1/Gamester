@@ -1,48 +1,37 @@
-/* Estilos CSS */
-
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* overflow: hidden; */ /* Elimina esta línea para permitir el scroll */
 }
-
-
 .navbar {
-  width: 100%; /* Ocupa el ancho completo de la ventana */
-  z-index: 1; /* Asegura que la barra de navegación esté por encima del video */
-  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0)); /* Degradado de negro a transparente de arriba hacia abajo */
-  
-  .navbar-nav {
-    margin-left: auto; /* Mueve los elementos de navegación al lado derecho */
-    
-    .nav-item {
-      margin-right: 20px; /* Ajusta el espaciado entre las opciones de navegación */
-      
-      .nav-link {
-        color: white; /* Color del texto de los botones */
-        font-size: 25px; /* Tamaño de fuente de las opciones de navegación */
-        text-align: center; /* Alinea el texto al centro */
-        font-family: 'Bebas Neue', sans-serif; /* Fuente Bebas Neue */
-        
-        &:hover {
-          text-shadow: 0px 4px 10px rgb(255, 0, 0); /* Sombra */
-          font-size: 32px; /* Tamaño de fuente de las opciones de navegación al hacer hover */
-        }
-      }
-    }
-  }
-  
-  /* Logo de la barra de navegación */
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+}
+.navbar-nav {
+  margin-left: auto;
+}
+.nav-item {
+  margin-right: 20px;
+}
+.nav-link {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.nav-link:hover {
+  text-shadow: 0px 4px 10px rgb(255, 0, 0);
+  font-size: 32px;
+}
+.navbar-logo {
+  max-width: 130px;
+}
+@media (max-width: 768px) {
   .navbar-logo {
-    max-width: 130px; /* Tamaño máximo del logo */
-    
-    @media (max-width: 768px) {
-      max-width: 120px; /* Reducir el tamaño máximo del logo para pantallas más pequeñas */
-    }
+    max-width: 120px;
   }
 }
-
 #video-container {
   position: relative;
   width: 100%;
@@ -52,15 +41,11 @@ body, html {
   justify-content: center;
   align-items: center;
 }
-
 #video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-
-/* Estilos para el contenedor de partículas */
 #particles-js {
   position: absolute;
   width: 100%;
@@ -70,12 +55,10 @@ body, html {
   z-index: 1;
 }
 .section {
+  background-color: #000000;
   padding: 50px 0;
   background-color: #f0f0f0;
   text-align: center;
-}
-.section .container {
-  position: relative;
 }
 .section .greeting {
   font-size: 40px;
@@ -94,19 +77,16 @@ body, html {
   max-width: 100%;
   height: auto;
 }
-
 @media (max-width: 768px) {
   .section .greeting {
     font-size: 30px;
   }
-
   .section .logo-container {
     position: static;
     transform: none;
     margin-top: 20px;
   }
 }
-
 .section h2 {
   margin-bottom: 20px;
 }
@@ -135,56 +115,41 @@ body, html {
   max-width: 90%;
   height: auto;
 }
-.greeting{
+.greeting {
   @media (max-width: 768px) {
-    font-size: 40PX;
+    font-size: 35px;
     padding-bottom: 100px;
   }
 }
 .lol {
-  background-color: black; /* Establece el color de fondo del contenedor en negro */
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta la altura del contenedor para que ocupe toda la altura de la ventana */
+  height: 100vh;
 }
-/* Estilos CSS para el botón de audio */
 button.audio-button {
-  position: fixed; /* Fija la posición del botón */
-  bottom: 20px; /* Espacio desde abajo */
-  right: 20px; /* Espacio desde la derecha */
-  z-index: 999; /* Asegura que esté por encima de otros elementos */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  background: none; /* Fondo transparente */
-  border: none; /* Sin borde */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
-
 button.audio-button img {
-  width: 075px; /* Tamaño de la imagen del icono */
-  transition: transform 0.3s ease; /* Agrega una transición suave de 0.3 segundos */
-
+  width: 075px;
+  transition: transform 0.3s ease;
 }
 button.audio-button img:hover {
-  filter: brightness(150%); /* Aumenta el brillo al 150% */
-  transform: scale(1.1); /* Aumenta el tamaño al 110% */
+  filter: brightness(150%);
+  transform: scale(1.1);
 }
 button.audio-button img {
   @media (max-width: 768px) {
     width: 50px;
   }
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.navbar {
-  width: 100%;
-  z-index: 1;
-}
-
-/* Agrega estilos para que el contenedor de partículas se superponga al video */
 #particles-js {
   width: 100%;
   height: 100%;
@@ -194,11 +159,203 @@ body, html {
   z-index: 1;
   background-color: transparent;
 }
-
-/* Agrega estilos para el contenedor principal */
 #video-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+.card {
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.878);
+  color:#ffffff;
+  border-width: 2px;
+  border-color: #ffffffa4;
+  border-radius: 0px;
+  transition: transform 0.3s ease;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.card:hover {
+  filter: brightness(150%);
+  transform: scale(1.1);
+}
+.card-text {
+  font-size: 16px;
+}
+.sectionlol {
+  background-image: url('../../assets/img/w3.webp');
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.enter-button,
+.enter-button:hover,
+.enter-button:visited,
+.enter-button:active {
+  color: rgb(255, 255, 255);
+  text-decoration:wavy;
+}
+.enter-button {
+  text-decoration: none;
+  background-color: #ff0000b7;
+  color: rgb(255, 255, 255);
+  border-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+.enter-button:hover {
+  background-color: #ff0000b7;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.enter-buttonn,
+.enter-buttonn:hover,
+.enter-buttonn:visited,
+.enter-buttonn:active {
+  color: rgb(255, 255, 255);
+  text-decoration:wavy;
+}
+.enter-buttonn {
+  text-decoration: none;
+  background-color: #ff000000;
+  color: rgb(255, 255, 255);
+  border-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+.enter-buttonn:hover {
+  background-color: #ff0000b7;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.fixed-background {
+  background-image: url('../../assets/img/4.webp');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+.center-content h2 {
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.center-content button {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+.side-by-side-section {
+  display: flex;
+  background-color: #000000;
+}
+.image-container {
+  flex: 1;
+}
+.image-container img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.text-container {
+  color: #c40000;
+  font-family: 'god', sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 25px;
+}
+.text-container p {
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  .text-container {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 1100px) {
+  .side-by-side-section {
+    flex-direction: column;
+  }
+  .image-container img {
+    height: auto;
+  }
+}
+@font-face {
+  font-family: 'god';
+  src: url('../../assets/font/GODOFWAR.TTF') format('truetype');
+}
+footer {
+  background-color: #000000;
+  color: #fff;
+  font-family: 'god';
+  text-align: center;
+}
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.footer-content {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content p {
+  flex: 1;
+}
+.social-icons a {
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 0 10px;
+}
+.sendbutton{
+  color:#ffffff;
+  background-color: #00000000;
+  border-width:2px;
+  border-color: #f0f0f0;
+  transition: 0.5s;
+}
+.sendbutton:hover{
+  color:#ffffff;
+  background-color: #ff0000;
+  border-width:2px;
+  border-color: #f0f0f0;
 }

@@ -8,18 +8,47 @@ declare var particlesJS: any; // Declaración de la función particlesJS
   styleUrls: ['./es.component.scss']
 })
 export class EsComponent implements OnInit {
+
   isVertical: boolean = false;
   audio = new Audio();
   audioIconSrc = '../../assets/img/sound.png'; // Cambia la ruta al icono de audio activado
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.configurarParticulas(); // Configurar partículas al inicializar
+
+    // Agregar evento de clic al botón para enviar correo
+    const botonEnviarCorreo = document.getElementById('enviarCorreo') as HTMLButtonElement;
+    botonEnviarCorreo.addEventListener('click', () => this.redirigirCorreo());
+
+    this.configurarAudio(); // Configurar audio al inicializar
+  }
 
   toggleVertical() {
     this.isVertical = !this.isVertical;
   }
 
-  constructor() { }
+  redirigirCorreo() {
+    // Verificar si es un dispositivo móvil
+    const esDispositivoMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  ngOnInit(): void {
-    // Configuración de las partículas
+    // URL del correo electrónico
+    let correoURL: string;
+
+    if (esDispositivoMovil) {
+      // Redirigir a un enlace mailto:
+      correoURL = 'mailto:www.gamercracks@gmail.com';
+    } else {
+      // Redirigir al cliente de correo de Gmail
+      correoURL = 'https://mail.google.com/mail/?view=cm&fs=1&to=www.gamercracks@gmail.com';
+    }
+
+    // Redirigir
+    window.location.href = correoURL;
+  }
+
+  configurarParticulas() {
     particlesJS('particles-js', {
       "particles": {
         "number": {
@@ -135,4 +164,11 @@ export class EsComponent implements OnInit {
       this.audioIconSrc = '../../assets/img/nosound.png'; // Cambia la ruta al icono de audio desactivado
     }
   }
+  configurarAudio() {
+    this.audio.src = '../../assets/sound/sound.mp3'; // Cambia la ruta al archivo de audio
+    this.audio.load();
+    this.audio.loop = true; // Establece el audio en bucle
+    this.audio.play(); // Reproduce automáticamente el audio al cargar la página
+  }
+  
 }

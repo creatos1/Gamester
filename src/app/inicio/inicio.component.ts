@@ -10,11 +10,9 @@ declare var particlesJS: any; // Declaración de la función particlesJS
 })
 export class InicioComponent implements OnInit {
   constructor(private languageService: LanguageService, private router: Router) {}
-  isVertical: boolean = false;
-  audio = new Audio();
-  audioIconSrc = '../../assets/img/sound.png'; // Cambia la ruta al icono de audio activado
 
   ngOnInit():void {
+    this.reproducirAudio();
     particlesJS('particles-js', {
       "particles": {
         "number": {
@@ -116,10 +114,6 @@ export class InicioComponent implements OnInit {
       },
       "retina_detect": true
     });
-    this.audio.src = '../../assets/sound/soundmenu.mp3'; // Cambia la ruta al archivo de audio
-    this.audio.load();
-    this.audio.loop = true; // Establece el audio en bucle
-    this.audio.play(); // Reproduce automáticamente el audio al cargar la página
   }
 
   saveLanguage(event: Event) {
@@ -132,21 +126,23 @@ export class InicioComponent implements OnInit {
   checkLanguage() {
     const selectedLanguage = this.languageService.getSelectedLanguage();
     if (selectedLanguage === 'es') {
-      window.location.href = '/homees';
+      window.location.href = '/home.es';
     } else if (selectedLanguage === 'en') {
       alert('Coming soon!');
     } else {
       alert('Select a language first!');
     }
   }
-  toggleAudio() {
-    if (this.audio.paused) {
-      this.audio.play();
-      this.audioIconSrc = '../../assets/img/sound.png'; // Cambia la ruta al icono de audio activado
-    } else {
-      this.audio.pause();
-      this.audioIconSrc = '../../assets/img/nosound.png'; // Cambia la ruta al icono de audio desactivado
-    }
+  reproducirAudio() {
+    const audio = new Audio('../../assets/sound/soundmenu.mp3'); // Ruta al archivo de audio
+    audio.play()
+      .then(() => {
+        console.log('Audio reproduciéndose...');
+      })
+      .catch(error => {
+        console.log('Error al reproducir el audio:', error);
+      });
   }
-}
 
+
+}
