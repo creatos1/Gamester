@@ -6,18 +6,24 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner'; 
+import { EsModule } from './es/es.module';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     BrowserModule,
+    EsModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
     RouterModule.forRoot([]),
-
+SharedModule
   ],
   providers: [],
   bootstrap: [] // No se especifica ningún componente para arrancar la aplicación aquí

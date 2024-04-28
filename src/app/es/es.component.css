@@ -1,19 +1,12 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-.navbar {
-  width: 100%;
-  z-index: 1;
-  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+
+.navbar{
+  width:100%;
+  z-index:1;
 }
 .navbar-nav {
   margin-left: auto;
 }
-.nav-item {
-  margin-right: 20px;
-}
+
 .nav-link {
   color: white;
   font-size: 25px;
@@ -21,7 +14,7 @@ body, html {
   font-family: 'Bebas Neue', sans-serif;
 }
 .nav-link:hover {
-  text-shadow: 0px 4px 10px rgb(255, 0, 0);
+  text-shadow: 0px 4px 10px red;
   font-size: 32px;
 }
 .navbar-logo {
@@ -32,11 +25,7 @@ body, html {
     max-width: 120px;
   }
 }
-#video-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+#video-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,51 +35,22 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+
 .section {
-  background-color: #000000;
+  background-color: black;
   padding: 50px 0;
-  background-color: #f0f0f0;
   text-align: center;
 }
-.section .greeting {
-  font-size: 40px;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
-  z-index: 2;
-  padding-bottom: 100px;
-}
-.section .logo-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-.section .logo-image {
-  max-width: 100%;
-  height: auto;
-}
+
 @media (max-width: 768px) {
   .section .greeting {
     font-size: 30px;
-  }
-  .section .logo-container {
-    position: static;
-    transform: none;
-    margin-top: 20px;
   }
 }
 .section h2 {
   margin-bottom: 20px;
 }
-.greeting {
+.g {
   position:absolute;
   text-align: center;
   left: 50%;
@@ -101,32 +61,13 @@ body, html {
   z-index: 2;
   padding-bottom: 100px;
 }
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.logo-image {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50vw;
-  max-width: 90%;
-  height: auto;
-}
-.greeting {
+
+
+.g {
   @media (max-width: 768px) {
     font-size: 35px;
     padding-bottom: 100px;
   }
-}
-.lol {
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 button.audio-button {
   position: fixed;
@@ -151,58 +92,39 @@ button.audio-button img {
   }
 }
 #particles-js {
-  width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
   background-color: transparent;
 }
 #video-container {
-  position: relative;
-  width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 .card {
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.878);
-  color:#ffffff;
+  margin-bottom: 30px;
+  background-color:black;
+  color:white;
   border-width: 2px;
-  border-color: #ffffffa4;
+  border-color: white;
   border-radius: 0px;
   transition: transform 0.3s ease;
-}
-.card-title {
-  font-size: 20px;
-  font-weight: bold;
 }
 .card:hover {
   filter: brightness(150%);
   transform: scale(1.1);
 }
-.card-text {
-  font-size: 16px;
-}
-.sectionlol {
+
+.sec {
   background-image: url('../../assets/img/w3.webp');
   background-size: cover;
-  background-position: left;
   background-repeat: no-repeat;
 }
-.enter-button,
-.enter-button:hover,
-.enter-button:visited,
-.enter-button:active {
-  color: rgb(255, 255, 255);
-  text-decoration:wavy;
-}
-.enter-button {
+
+.eb {
   text-decoration: none;
-  background-color: #ff0000b7;
-  color: rgb(255, 255, 255);
-  border-color: white;
+  background-color:transparent;
+  color: white;
+  border-color:red;
   padding-left: 20px;
   padding-right: 20px;
   font-size: 20px;
@@ -211,32 +133,26 @@ button.audio-button img {
   display: block;
 }
 .enter-button:hover {
-  background-color: #ff0000b7;
+  background-color:red;
   color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
+  border-color:red;
   cursor: pointer;
 }
-.enter-buttonn,
-.enter-buttonn:hover,
-.enter-buttonn:visited,
-.enter-buttonn:active {
-  color: rgb(255, 255, 255);
-  text-decoration:wavy;
-}
-.enter-buttonn {
+.ebnn {
   text-decoration: none;
-  background-color: #ff000000;
-  color: rgb(255, 255, 255);
+  background-color:black;
+  color: white;
   border-color: white;
   padding-left: 20px;
   padding-right: 20px;
   font-size: 20px;
-  cursor: pointer;
   margin: 0 auto;
   display: block;
+  color: rgb(255, 255, 255);
+  text-decoration:wavy;
 }
-.enter-buttonn:hover {
-  background-color: #ff0000b7;
+.ebnn:hover {
+  background-color: red;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -244,7 +160,7 @@ button.audio-button img {
 a {
   text-decoration: none;
 }
-.fixed-background {
+.fb {
   background-image: url('../../assets/img/4.webp');
   background-attachment: fixed;
   background-size: cover;
@@ -252,7 +168,7 @@ a {
   height: 100vh;
   position: relative;
 }
-.center-content {
+.cc {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -260,18 +176,16 @@ a {
   text-align: center;
   z-index: 2;
 }
-.center-content h2 {
+.cc h2 {
   color: white;
   font-size: 35px;
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
 }
-.center-content button {
-  background-color: #ff0000;
+.cc button {
+  background-color: red;
   color: white;
   padding: 10px 20px;
-  font-size: 18px;
-  border: none;
   cursor: pointer;
 }
 .side-by-side-section {

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component'; // Importa el componente de inicio
 import { EsComponent } from './es/es.component'; // Importa el componente EsComponent
-import { ModsesComponent } from './modses/modses.component';
-import { GaleriaesComponent } from './galeriaes/galeriaes.component';
-import { DonacionesComponent } from './donaciones/donaciones.component';
-import { AcercaesComponent } from './acercaes/acercaes.component';
+import { ModsesComponent } from './es/modses/modses.component';
+import { GaleriaesComponent } from './es/galeriaes/galeriaes.component';
+import { DonacionesComponent } from './es/donaciones/donaciones.component';
+import { AcercaesComponent } from './es/acercaes/acercaes.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
